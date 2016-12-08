@@ -7,20 +7,6 @@ use Illuminate\Support\Str;
 trait Presentable
 {
     /**
-     * The presenter's namespace.
-     *
-     * @var string
-     */
-    protected $presenterNamespace = 'App\\Presenters\\';
-
-    /**
-     * The presenter associated with the model.
-     *
-     * @var string
-     */
-    protected $presenterClass;
-
-    /**
      * Create a presenter for the model.
      *
      * @return \Gtk\Presenter\Presenter
@@ -30,10 +16,10 @@ trait Presentable
         $presenter = $this->getPresenterClass();
 
         if (! class_exists($presenter)) {
-            return new NullPresenter();
+            return new NullPresenter($this);
         }
 
-        return new $presenter;
+        return new $presenter($this);
     }
 
     /**
@@ -43,11 +29,21 @@ trait Presentable
      */
     public function getPresenterClass()
     {
-        if (isset($this->presenterClass)) {
+        if (property_exists($this, 'presenterClass')) {
             return $this->presenterClass;
         }
 
-        return $this->presenterNamespace.str_replace('\\', '', Str::snake(Str::plural(class_basename($this)))).'Presenter';
+        return $this->presenterNamespace().str_replace('\\', '', Str::snake(Str::plural(class_basename($this)))).'Presenter';
+    }
+
+    /**
+     * Get the presenter's namespace.
+     *
+     * @var string
+     */
+    public function presenterNamespace()
+    {
+        return property_exists($this, 'presenterNamespace') ? $this->presenterNamespace : 'App\\Presenters\\';
     }
 
     /**
