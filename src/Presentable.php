@@ -33,7 +33,7 @@ trait Presentable
             return $this->presenterClass;
         }
 
-        return $this->presenterNamespace().str_replace('\\', '', Str::snake(Str::plural(class_basename($this)))).'Presenter';
+        return $this->presenterNamespace().class_basename($this).'Presenter';
     }
 
     /**
