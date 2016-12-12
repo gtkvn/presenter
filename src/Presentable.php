@@ -2,6 +2,7 @@
 
 namespace Gtk\Presenter;
 
+use ReflectionClass;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
@@ -75,7 +76,7 @@ trait Presentable
 
         sort($models);
 
-        $newPivot = implode('', $models).'Pivot';
+        $newPivot = (new ReflectionClass($this))->getNamespaceName().'\\'.implode('', $models).'Pivot';
 
         if (class_exists($newPivot)) {
             return new $newPivot($parent, $attributes, $table, $exists);
