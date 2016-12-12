@@ -3,6 +3,7 @@
 namespace Gtk\Presenter;
 
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Model;
 
 trait Presentable
 {
