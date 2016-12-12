@@ -2,6 +2,7 @@
     "name": "gtk/presenter",
     "description": "View presenters for your application.",
     "license": "MIT",
+    "keywords": ["view presenters", "presenter"],
     "authors": [
         {
             "name": "Giang Thai Cuong",
