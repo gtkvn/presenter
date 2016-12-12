@@ -58,4 +58,28 @@ trait Presentable
 
         return $this;
     }
+
+    /**
+     * Create a new pivot model instance.
+     *
+     * @param  \Illuminate\Database\Eloquent\Model  $parent
+     * @param  array  $attributes
+     * @param  string  $table
+     * @param  bool  $exists
+     * @return \Illuminate\Database\Eloquent\Relations\Pivot
+     */
+    public function newPivot(Model $parent, array $attributes, $table, $exists)
+    {
+        $models = [class_basename($parent), class_basename($this)];
+
+        sort($models);
+
+        $newPivot = implode('', $models).'Pivot';
+
+        if (class_exists($newPivot)) {
+            return new $newPivot($parent, $attributes, $table, $exists);
+        }
+
+        return parent::newPivot($parent, $attributes, $table, $exists);
+    }
 }
