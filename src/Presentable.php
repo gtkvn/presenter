@@ -98,7 +98,7 @@ trait Presentable
     /**
      * Get the pivot model's suffix.
      *
-     * @var string
+     * @return string
      */
     protected function pivotSuffix()
     {
