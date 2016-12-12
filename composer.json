@@ -1,8 +1,8 @@
 {
     "name": "gtk/presenter",
-    "description": "View presenters for your application.",
+    "description": "Simple view presenters for your application.",
     "license": "MIT",
-    "keywords": ["view presenters", "presenter"],
+    "keywords": ["view", "presenter", "laravel"],
     "authors": [
         {
             "name": "Giang Thai Cuong",

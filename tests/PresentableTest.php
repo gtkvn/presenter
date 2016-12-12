@@ -71,7 +71,7 @@ class FooWithCustomNamespace
 {
     use Presentable;
 
-    protected $presenterNamespace = 'Baz\\Zonda\\';
+    protected $presenterNamespace = 'Baz\\Zonda';
 
     protected $presenterClassSuffix = 'ViewPresenter';
 }

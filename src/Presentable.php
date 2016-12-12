@@ -35,7 +35,7 @@ trait Presentable
             return $this->presenterClass;
         }
 
-        return $this->presenterNamespace().class_basename($this).$this->presenterClassSuffix();
+        return $this->presenterNamespace().'\\'.class_basename($this).$this->presenterClassSuffix();
     }
 
     /**
@@ -45,7 +45,7 @@ trait Presentable
      */
     protected function presenterNamespace()
     {
-        return property_exists($this, 'presenterNamespace') ? $this->presenterNamespace : 'App\\Presenters\\';
+        return property_exists($this, 'presenterNamespace') ? $this->presenterNamespace : 'App\\Presenters';
     }
 
     /**
