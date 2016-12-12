@@ -35,7 +35,17 @@ trait Presentable
             return $this->presenterClass;
         }
 
-        return $this->presenterNamespace().class_basename($this).'Presenter';
+        return $this->presenterNamespace().class_basename($this).$this->presenterClassSuffix();
+    }
+
+    /**
+     * Get the presenter class's suffix.
+     *
+     * @return string
+     */
+    protected function presenterClassSuffix()
+    {
+        return property_exists($this, 'presenterClassSuffix') ? $this->presenterClassSuffix : 'Presenter';
     }
 
     /**
@@ -43,7 +53,7 @@ trait Presentable
      *
      * @var string
      */
-    public function presenterNamespace()
+    protected function presenterNamespace()
     {
         return property_exists($this, 'presenterNamespace') ? $this->presenterNamespace : 'App\\Presenters\\';
     }
@@ -76,12 +86,22 @@ trait Presentable
 
         sort($models);
 
-        $newPivot = (new ReflectionClass($this))->getNamespaceName().'\\'.implode('', $models).'Pivot';
+        $newPivot = (new ReflectionClass($this))->getNamespaceName().'\\'.implode('', $models).$this->pivotSuffix();
 
         if (class_exists($newPivot)) {
             return new $newPivot($parent, $attributes, $table, $exists);
         }
 
         return parent::newPivot($parent, $attributes, $table, $exists);
+    }
+
+    /**
+     * Get the pivot model's suffix.
+     *
+     * @var string
+     */
+    protected function pivotSuffix()
+    {
+        return property_exists($this, 'pivotSuffix') ? $this->pivotSuffix : 'Pivot';
     }
 }
