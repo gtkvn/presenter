@@ -39,16 +39,6 @@ trait Presentable
     }
 
     /**
-     * Get the presenter class's suffix.
-     *
-     * @return string
-     */
-    protected function presenterClassSuffix()
-    {
-        return property_exists($this, 'presenterClassSuffix') ? $this->presenterClassSuffix : 'Presenter';
-    }
-
-    /**
      * Get the presenter's namespace.
      *
      * @var string
@@ -56,6 +46,16 @@ trait Presentable
     protected function presenterNamespace()
     {
         return property_exists($this, 'presenterNamespace') ? $this->presenterNamespace : 'App\\Presenters\\';
+    }
+
+    /**
+     * Get the presenter class's suffix.
+     *
+     * @return string
+     */
+    protected function presenterClassSuffix()
+    {
+        return property_exists($this, 'presenterClassSuffix') ? $this->presenterClassSuffix : 'Presenter';
     }
 
     /**
