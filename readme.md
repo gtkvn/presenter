@@ -70,11 +70,25 @@ You can do:
 
 You can specific the presenter class associated with the model via the following properties of `Presentable` trait:
 
-- `$presenterClass`: specific entirely the presenter class's name included its namespace. For example, `protected $presenterClass = 'Acme\Presenters\User'`.
+- `$presenterClass`: specific entirely the presenter class's name included its namespace. For example:
 
-- `$presenterNamespace`: specific the presenter class's namespace. For example, `protected $presenterNamespace = 'Acme\Presenters'`.
+```php
+    protected $presenterClass = 'Acme\Presenters\User';
+```
 
-- `$presenterClassSuffix`: specific the presenter class's suffix. For example, with `protected $presenterClassSuffix = 'View';`, the presenter class associated with the model `User` is `UserView` instead of `UserPresenter`.
+- `$presenterNamespace`: specific the presenter class's namespace. For example:
+
+```php
+    protected $presenterNamespace = 'Acme\Presenters';
+```
+
+- `$presenterClassSuffix`: specific the presenter class's suffix. For example, with:
+
+```php
+    protected $presenterClassSuffix = 'View';
+```
+
+The presenter class associated with the model `User` is `UserView` instead of `UserPresenter`.
 
 ## License
 
