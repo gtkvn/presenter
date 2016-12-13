@@ -1,5 +1,11 @@
 # Simple View Presenters
 
+[![Build Status](https://travis-ci.org/cuonggt/presenter.svg?branch=master)](https://travis-ci.org/cuonggt/presenter)
+[![Latest Stable Version](https://poser.pugx.org/gtk/presenter/v/stable)](https://packagist.org/packages/gtk/presenter)
+[![Total Downloads](https://poser.pugx.org/gtk/presenter/downloads)](https://packagist.org/packages/gtk/presenter)
+[![Latest Unstable Version](https://poser.pugx.org/gtk/presenter/v/unstable)](https://packagist.org/packages/gtk/presenter)
+[![License](https://poser.pugx.org/gtk/presenter/license)](https://packagist.org/packages/gtk/presenter)
+
 Sometimes a bit of logic needs to be performed before some data (for example, from your model) is displayed from the view. A view presenter is an useful way to perform the view related logic clearly instead of hard-coding the logic into the view or storing the logic in the model.
 
 ## Install
