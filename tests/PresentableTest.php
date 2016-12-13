@@ -12,7 +12,7 @@ class PresentableTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('App\Presenters\FooPresenter', get_class($presenter));
 
-        $this->assertEquals('foobar', $presenter->bar);
+        $this->assertEquals('foo bar', $presenter->fullName);
     }
 
     /** @test */
@@ -47,6 +47,10 @@ class PresentableTest extends PHPUnit_Framework_TestCase
 class Foo
 {
     use Presentable;
+
+    public $first_name = 'foo';
+
+    public $last_name = 'bar';
 }
 
 class Bar

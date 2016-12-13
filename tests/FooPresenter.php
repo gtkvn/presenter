@@ -6,8 +6,8 @@ use Gtk\Presenter\Presenter;
 
 class FooPresenter extends Presenter
 {
-    public function bar()
+    public function fullName()
     {
-        return 'foobar';
+        return $this->model->first_name.' '.$this->model->last_name;
     }
 }
