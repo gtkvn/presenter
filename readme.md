@@ -7,11 +7,7 @@ Sometimes a bit of logic needs to be performed before some data (for example, fr
 Install this package via the Composer package manager:
 
 ```js
-{
-    "require": {
-        "gtk/presenter": "dev-master"
-    }
-}
+composer require gtk/presenter
 ```
 
 ## Usage
