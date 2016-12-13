@@ -1,6 +1,6 @@
 # Simple View Presenters
 
-[![Build Status](https://travis-ci.org/cuonggt/presenter.svg?branch=master)](https://travis-ci.org/cuonggt/presenter)
+[![Build Status](https://travis-ci.org/gtkvn/presenter.svg?branch=master)](https://travis-ci.org/gtkvn/presenter)
 [![Latest Stable Version](https://poser.pugx.org/gtk/presenter/v/stable)](https://packagist.org/packages/gtk/presenter)
 [![Total Downloads](https://poser.pugx.org/gtk/presenter/downloads)](https://packagist.org/packages/gtk/presenter)
 [![Latest Unstable Version](https://poser.pugx.org/gtk/presenter/v/unstable)](https://packagist.org/packages/gtk/presenter)
