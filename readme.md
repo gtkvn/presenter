@@ -18,7 +18,7 @@ composer require gtk/presenter
 
 ## Usage
 
-Fist, store your presenters somewhere with the default namespace is `App\Presenters`. Here is an example of a presenter:
+First, store your presenters somewhere with the default namespace is `App\Presenters`. Here is an example of a presenter:
 
 ```php
 namespace App\Presenters;
