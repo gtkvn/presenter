@@ -79,7 +79,7 @@ trait Presentable
      * @param  bool  $exists
      * @return \Illuminate\Database\Eloquent\Relations\Pivot
      */
-    public function newPivot(Model $parent, array $attributes, $table, $exists)
+    public function newPivot(Model $parent, array $attributes, $table, $exists, $using = NULL)
     {
         $models = [class_basename($parent), class_basename($this)];
 
